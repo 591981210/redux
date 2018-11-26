@@ -4,7 +4,7 @@ const _products = [
     {"id": 3, "title": "Charli XCX - Sucker CD", "price": 19.99, "inventory": 5}
 ]
 
-export const getAllProducts = callback => {
+export const cbAllProducts = callback => {
     setTimeout(function () {
         callback(_products)
     }, 100)

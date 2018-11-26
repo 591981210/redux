@@ -1,6 +1,6 @@
 import  {connect} from 'react-redux'
 import Products from '../components/Products'
-import {getAllProducts} from '../actions/'
+import {getAllProducts,addToCart} from '../actions/'
 
 
 function mapStateToProps (state){
@@ -24,7 +24,8 @@ function mapStateToProps (state){
 // }
 
 const mapDispatchToProps = {
-    getAllProducts
+    getAllProducts,
+    addToCart
 }
 
 const ProductsContainer = connect(

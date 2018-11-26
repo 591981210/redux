@@ -7,9 +7,6 @@ const all = (state = initialState.all, action) => {
         case 'RECIVE_PRODUCTS':
             return action.products
         default:
-            console.log(333);
-            console.log(state);
-            console.log(initialState.all);
             return state
     }
 }

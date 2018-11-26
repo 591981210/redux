@@ -1,6 +1,6 @@
 import  {connect} from 'react-redux'
 import Products from '../components/Products'
-
+import {getAllProducts} from '../actions/'
 
 
 function mapStateToProps (state){
@@ -9,15 +9,22 @@ function mapStateToProps (state){
     }
 }
 
-function mapDispatchToProps (dispatch){
-    return {
-        getAllProducts(){
-            dispatch({
-                type:'RECIVE_PRODUCTS',
-                products:['a','b','c']
-            })
-        }
-    }
+// function mapDispatchToProps (dispatch){
+//     return {
+//         getAllProducts(){
+//             dispatch(getAllProducts())
+//         }
+//         // getAllProducts(){
+//         //     dispatch({
+//         //         type:'RECIVE_PRODUCTS',
+//         //         products:['a','b','c']
+//         //     })
+//         // }
+//     }
+// }
+
+const mapDispatchToProps = {
+    getAllProducts
 }
 
 const ProductsContainer = connect(

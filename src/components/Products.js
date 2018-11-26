@@ -8,7 +8,7 @@ class Products extends Component {
             <div>
                 <h2>Products</h2>
                 <ul>
-                    {products.map(item =>(<li key={item}>{item}</li>))}
+                    {/*{products.map(item =>(<li key={item}>{item}</li>))}*/}
                 </ul>
             </div>
         )

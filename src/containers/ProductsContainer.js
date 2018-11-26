@@ -5,7 +5,7 @@ import Products from '../components/Products'
 
 function mapStateToProps (state){
     return {
-        foo:state.foo
+        foo:state.products.foo
     }
 }
 

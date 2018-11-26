@@ -13,14 +13,22 @@ const getCartProducts = state => {
     })
 }
 
+const getTotalPrice = state=>{
+    return getCartProducts(state).reduce((total,prod)=>{
+        return total + prod.price * prod.quantity
+    },0)
+}
+
 function mapStateToProps(state) {
     return {
-        cartProducts: getCartProducts(state)
+        cartProducts: getCartProducts(state),
+        totalPrice:getTotalPrice(state)
     }
 }
 
 function mapDispatchToProps(dispatch) {
-    return {}
+    return {
+    }
 }
 
 const CartContainer = connect(

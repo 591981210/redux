@@ -3,7 +3,7 @@ import React,{Component}from 'react'
 
 class Cart extends  Component {
     render() {
-        const {cartProducts} = this.props
+        const {cartProducts,totalPrice} = this.props
         return (
             <div>
                 <h2>Cart</h2>
@@ -14,6 +14,7 @@ class Cart extends  Component {
                         </li>
                     ))}
                 </ul>
+                <p>total:{totalPrice}</p>
             </div>
         )
     }

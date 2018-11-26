@@ -1,9 +1,9 @@
-import React,{Component}from 'react'
+import React, {Component} from 'react'
 
 
-class Cart extends  Component {
+class Cart extends Component {
     render() {
-        const {cartProducts,totalPrice,checkout} = this.props
+        const {cartProducts, totalPrice, checkout, checkoutStatus} = this.props
         return (
             <div>
                 <h2>Cart</h2>
@@ -15,10 +15,13 @@ class Cart extends  Component {
                     ))}
                 </ul>
                 <p>total:{totalPrice}</p>
-                <button onClick={()=>checkout(cartProducts)}>checkout</button>
+                <div>
+                    <button onClick={() => checkout(cartProducts)}>checkout</button>
+                </div>
+                {checkoutStatus && <p>Checkout {checkoutStatus}</p>}
             </div>
         )
     }
 }
 
-export  default Cart
+export default Cart

@@ -23,7 +23,8 @@ const getTotalPrice = state=>{
 function mapStateToProps(state) {
     return {
         cartProducts: getCartProducts(state),
-        totalPrice:getTotalPrice(state)
+        totalPrice:getTotalPrice(state),
+        checkoutStatus:state.cart.checkoutStatus
     }
 }
 

@@ -1,7 +1,12 @@
 import  {connect} from 'react-redux'
 import Products from '../components/Products'
+
+
+
 function mapStateToProps (state){
-    return {}
+    return {
+        foo:state.foo
+    }
 }
 
 function mapDispatchToProps (state){

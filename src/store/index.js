@@ -1,9 +1,9 @@
 import {createStore} from 'redux'
 
-function redcuer(state = {foo: 'bar'}.action = {}) {
+function reducer(state = {foo: 'bar'},action = {}) {
     return state
 }
 
-const store = createStore(redcuer)
+const store = createStore(reducer)
 
 export default store

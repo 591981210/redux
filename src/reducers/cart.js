@@ -10,6 +10,7 @@ const items = (state = initialState.items, action) => {
             const product = state.find(item => item.id === productId)
             if (product) {
                 product.quantity++
+                return [...state]
             } else {
                 return [
                     ...state,
@@ -21,14 +22,24 @@ const items = (state = initialState.items, action) => {
             }
 
             return state
+        case 'SET_ITMES':
+            return action.items
         default:
             return state
     }
 }
 export default (state = initialState, action) => {
-    return {
-        items: items(state.items, action),
-        checkoutStatus: state.checkoutStatus
+    switch (action.type) {
+        case 'SET_CHECKOUT_STATUS':
+            return {
+                ...state,
+                checkoutStatus: action.status
+            }
+        default:
+            return {
+                items: items(state.items, action),
+                checkoutStatus: state.checkoutStatus
+            }
     }
 }
 

@@ -3,7 +3,7 @@ import React,{Component}from 'react'
 
 class Cart extends  Component {
     render() {
-        const {cartProducts,totalPrice} = this.props
+        const {cartProducts,totalPrice,checkout} = this.props
         return (
             <div>
                 <h2>Cart</h2>
@@ -15,6 +15,7 @@ class Cart extends  Component {
                     ))}
                 </ul>
                 <p>total:{totalPrice}</p>
+                <button onClick={()=>checkout(cartProducts)}>checkout</button>
             </div>
         )
     }

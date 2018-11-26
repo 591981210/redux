@@ -9,3 +9,9 @@ export const cbAllProducts = callback => {
         callback(_products)
     }, 100)
 }
+
+export const buyProducts = (products,callback,errorCallback) => {
+    setTimeout(function() {
+        Math.random() > 0.5 ? callback() :errorCallback()
+    },100)
+}

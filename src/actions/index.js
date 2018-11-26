@@ -19,6 +19,30 @@ export const getAllProducts = () => dispatch => {
     })
 }
 
-export const handleAddToCart = product => dispatch => {
-    dispatch(addToCart(product))
+export const setCheckoutStatus = status => ({
+    type: 'SET_CHECKOUT_STATUS',
+    status
+})
+
+export const setCartItems = items => ({
+    type: 'SET_ITMES',
+    items
+})
+export const checkout = (products) => dispath => {
+    //1.备份购物车数据
+    const savedCartProducts = [...products]
+    //2.清空结算状态
+    dispath(setCheckoutStatus(null))
+    //3.清空购物车
+    dispath(setCartItems([]))
+    //4.执行结算操作
+    shop.buyProducts(
+        products,
+        () => dispath(setCheckoutStatus('successful')),
+        () => {
+            dispath(setCheckoutStatus('failed'))
+            dispath(setCartItems(savedCartProducts))
+        }
+    )
+
 }

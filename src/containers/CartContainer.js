@@ -1,5 +1,6 @@
 import {connect} from 'react-redux'
 import Cart from '../components/Cart'
+import {checkout} from '../actions/'
 
 const getCartProducts = state => {
     return state.cart.items.map(cartItem => {
@@ -26,9 +27,13 @@ function mapStateToProps(state) {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-    }
+// function mapDispatchToProps(dispatch) {
+//     return {
+//     }
+// }
+
+const mapDispatchToProps = {
+    checkout
 }
 
 const CartContainer = connect(

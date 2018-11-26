@@ -1,13 +1,13 @@
 import * as shop from '../api/shop'
-
+import * as types from '../constants/ActionTypes'
 export const reciveProducts = products => ({
-    type: 'RECIVE_PRODUCTS',
+    type: types.RECIVE_PRODUCTS,
     products
 })
 
 export const addToCart = product => {
     return {
-        type: 'ADD_TO_CART',
+        type: types.ADD_TO_CART,
         product
     }
 }
@@ -20,12 +20,12 @@ export const getAllProducts = () => dispatch => {
 }
 
 export const setCheckoutStatus = status => ({
-    type: 'SET_CHECKOUT_STATUS',
+    type: types.SET_CHECKOUT_STATUS,
     status
 })
 
 export const setCartItems = items => ({
-    type: 'SET_ITMES',
+    type: types.SET_ITMES,
     items
 })
 export const checkout = (products) => dispath => {

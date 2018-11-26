@@ -1,3 +1,5 @@
+import * as types from '../constants/ActionTypes'
+
 const initialState = {
     items: [],
     checkoutStatus: null
@@ -5,7 +7,7 @@ const initialState = {
 
 const items = (state = initialState.items, action) => {
     switch (action.type) {
-        case 'ADD_TO_CART':
+        case types.ADD_TO_CART:
             const productId = action.product.id
             const product = state.find(item => item.id === productId)
             if (product) {
@@ -22,7 +24,7 @@ const items = (state = initialState.items, action) => {
             }
 
             return state
-        case 'SET_ITMES':
+        case types.SET_ITMES:
             return action.items
         default:
             return state
@@ -30,7 +32,7 @@ const items = (state = initialState.items, action) => {
 }
 export default (state = initialState, action) => {
     switch (action.type) {
-        case 'SET_CHECKOUT_STATUS':
+        case types.SET_CHECKOUT_STATUS:
             return {
                 ...state,
                 checkoutStatus: action.status

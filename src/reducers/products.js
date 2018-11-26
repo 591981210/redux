@@ -1,11 +1,13 @@
+import * as types from '../constants/ActionTypes'
+
 const initialState = {
     all: [],
 }
 const all = (state = initialState.all, action) => {
     switch (action.type) {
-        case 'RECIVE_PRODUCTS':
+        case types.RECIVE_PRODUCTS:
             return action.products
-        case 'ADD_TO_CART':
+        case types.ADD_TO_CART:
             console.log(action.product);
             console.log(state);
             console.log(initialState.all);

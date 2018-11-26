@@ -5,12 +5,19 @@ import Products from '../components/Products'
 
 function mapStateToProps (state){
     return {
-        foo:state.products.foo
+        products:state.products.all
     }
 }
 
-function mapDispatchToProps (state){
-    return {}
+function mapDispatchToProps (dispatch){
+    return {
+        getAllProducts(){
+            dispatch({
+                type:'RECIVE_PRODUCTS',
+                products:['a','b','c']
+            })
+        }
+    }
 }
 
 const ProductsContainer = connect(

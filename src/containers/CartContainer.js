@@ -4,7 +4,7 @@ function mapStateToProps (state){
     return {}
 }
 
-function mapDispatchToProps (state){
+function mapDispatchToProps (dispatch){
     return {}
 }
 

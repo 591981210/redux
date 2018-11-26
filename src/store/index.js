@@ -7,6 +7,10 @@ const rootReducer = combineReducers({
     cart
 })
 
+// function reducer(state = {foo: 'bar'},action = {}) {
+//     return state
+// }
+
 const store = createStore(rootReducer)
 
 export default store
